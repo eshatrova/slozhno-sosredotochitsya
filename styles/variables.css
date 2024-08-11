@@ -1,15 +1,20 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+
+/* в variables.css пишешь только переменные для :root (если основная тема темная, то прописываешь переменные которые именно для темной темы) */
 
 /* //DARK THEME*/
 :root {
-  --main-font: "IBM Plex mono";
-  --accent-font: "Raleway";
-  --accent-color: "#FF0070";
+  
+  --accent-color: #FF0070;
   --title-decor: "";
-  --extra-color: "#DB00FF";
-  --bg-color: "#000028";
-  --font-color: "#000028";
+  --extra-color: #DB00FF;
+  --bg-color: #000028;
+  --font-color: #000028;
+  --font-color-paragraph:#F1B2CE;
+
+  background: url(../images/cover-image-dark.png) center no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  
 }
+

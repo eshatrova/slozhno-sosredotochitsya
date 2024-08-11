@@ -1,49 +1,121 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* в файле style.css прописать ТОЛЬКО те стили которые НЕ ОТНОСЯТСЯ к темам, а универсальны для всех тем */
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background: url(../images/cover-image-dark.png) center no-repeat;
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
+
+  color: var(--font-color);
+  font-family: "IBM Plex Mono";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+  padding: 20px;
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
   min-block-size: 668px;
   block-size: 100vh;
 }
 
-.decorated-zone{ 
- 
+.header__rec {
+  color: var(--accent-color);
+  position: absolute;
+  font-weight: 400;
+  line-height: 25px;
+  top: 20px;
+  right: 48px;
 }
+
+.decorated-zone {
+  height: 100vh;
+  width: 100vw;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
+}
+
+/* .header__theme-menu-list {
+  align-self: center;
+  display: flex;
+  gap: 10px;
+} */
 
 .header__theme-menu-button {
-color: var(--accent-color);
-text-align: center;
-font-family: "IBM Plex Mono";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; /* 100% */
+  appearance: none;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-color);
+  text-align: center;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0px 25px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.title {
-color: var(--extra-color);
-text-shadow: 4px 4px 0px var(--accent-color);
-font-family: "IBM Plex Mono";
-font-size: 116px;
-font-style: normal;
-font-weight: 700;
-line-height: 82.5%; /* 95.7px */
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color);
 }
 
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.title-decor {
+}
+
+
+.title1 {
+  align-self: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: var(--accent-color);
+  font-size: 116px;
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+.titlemin {
+  display: flex;
+  width: 100%;
+  align-self: flex-end ;
+  width: 50%;
+}
+.title2 {
+  color: var(--accent-color);
+}
+
+.title3 {
+  align-self: stretch;
+  background-color: var(--accent-color);
+}
+
+.title4 {
+  align-self: stretch;
+  background-color: var(--accent-color);
+  color: var(--font-color);
+  font-weight: 400;
+}
 
 .card_text {
-  color:"#F1B2CE"
+  color: var(--font-color-paragraph);
+  font-weight: 400;
 }
 
 .galery {
   display: grid;
+  max-width: 10vw;
+  gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
