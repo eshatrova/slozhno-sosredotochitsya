@@ -10,7 +10,7 @@
   line-height: 23.4px; /* 130% */
   background-color: var(--bg-color);
   background-image: var(--bg-image);
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   padding: 20px;
@@ -18,8 +18,8 @@
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-
-  align-self: center;
+  align-content: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -29,9 +29,15 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
-  block-size: 100vh;
+  height: 100vh;
 }
-
+.subtitle-header {
+  justify-self: center;
+  align-self: flex-end;
+  /* justify-content: center;
+  align-self: end;
+  width: 50%; */
+}
 .header__rec {
   color: var(--accent-color);
   position: absolute;
@@ -65,7 +71,6 @@
 /* Кнопки в  меню */
 
 .header__theme-menu {
-  display: flex;
   justify-content: center;
 }
 
@@ -107,13 +112,16 @@
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
   text-shadow: 4px 4px 0 var(--accent-color);
-  margin-left: -20px;
+  /* margin-left: -20px; */
+  align-self: inline;
 }
 
 .subtitle-header {
-  justify-content: center;
+  justify-self: end;
   align-self: flex-end;
-  width: 50%;
+  /* justify-content: center;
+  align-self: end;
+  width: 50%; */
 }
 
 /* BODY */
@@ -199,7 +207,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.galery {
+/* .galery {
   display: grid;
   gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   grid-template-rows: repeat(4, 1fr);
@@ -243,7 +251,7 @@
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 4;
-}
+} */
 
 .footer {
   display: flex;
@@ -251,7 +259,7 @@
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .section-subtitle2 {
     width: 100%;
   }
@@ -285,31 +293,31 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
-  }
-  .sunset {
+  } */
+/* .sunset {
     height: 142px;
-  }
-  .ice-cream {
+  } */
+/* .ice-cream {
     height: 355px;
-  }
-  .tape {
+  } */
+/* .tape {
     height: 237px;
-  }
-  .books {
+  } */
+/* .books {
     height: 355px;
-  }
-  .street {
+  } */
+/* .street {
     height: 237px;
-  }
+  } */
 
-  .section-subtitle2 {
-    width: 100%;
-  }
-  .section2-1 {
-    display: flex;
-    flex-direction: column;
-  }
+.section-subtitle2 {
+  width: 100%;
 }
+.section2-1 {
+  display: flex;
+  flex-direction: column;
+}
+
 /* @media (width =< 768px) {
   .header {
     min-width: 768px;

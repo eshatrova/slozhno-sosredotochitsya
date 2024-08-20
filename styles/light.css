@@ -5,53 +5,30 @@
 */
 
 /* в light.css пишешь ТОЛЬКО новые значения переменных для .page.theme_light, ТОЛЬКО новые значения переменных внутри
- prefers-color-scheme: light для :root (без указания класса), и ТОЛЬКО те селекторы, которые имеют специфическое поведение в светлой теме которое отличается от темной темы (например .page.theme_light .rec { .... }) */
+ prefers-color-scheme: light для :root (без указания класса),
+  и ТОЛЬКО те селекторы, которые имеют специфическое поведение в светлой 
+  теме которое отличается от темной темы (например .page.theme_light .rec { .... }) */
 
 .page.theme_light {
-  
-  --accent-color: #FF8DCB;
+  --accent-color: #ff8dcb;
   --title-decor: "";
-  --extra-color: #FF0070;
-  --bg-color: #FFF1F7;
+  --extra-color: #ff0070;
+  --bg-color: #fff1f7;
   --font-color: #000028;
-  --font-color-paragraph:#F1B2CE;
+  --font-color-paragraph: #f1b2ce;
   --bg-image: url(../images/cover-image-light.png);
-  
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
- 
 }
-
 
 .page.theme_light .header__rec {
   display: none;
 }
 
-
-
-
-
-/* :root.theme-light {
-  /* Переменные светлой темы */  
- 
-    
-
-/* Остальные стили */
-
 @media (prefers-color-scheme: light) {
-:root {
-  --main-font: IBM Plex mono;
-  --accent-font: "Raleway";  
-  --bg-color: #FFF1F7;
-  --nav-color: #353430;
-      /* Дублируем переменные светлой темы */    
+  :root {
+    --main-font: IBM Plex mono;
+    --accent-font: "Raleway";
+    --bg-color: #fff1f7;
+    --nav-color: #353430;
+    /* Дублируем переменные светлой темы */
   }
 }
-
-/* Остальные стили */
