@@ -10,13 +10,20 @@
   font-weight: 700;
   line-height: 23.4px; /* 130% */
   padding: 20px;
+  max-width: 1024px;
+  display: flex;
+flex-direction: column;
+row-gap: 60px;
+  
+  align-self: center;
+  position: relative;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 668px;
+  display: grid;
+  min-block-size: 768px;
   block-size: 100vh;
+  
 }
 
 .header__rec {
@@ -28,9 +35,20 @@
   right: 48px;
 }
 
+.header__rec::after {
+content: "";
+display: inline-block;
+width: 9px;
+height: 9px;
+margin-inline-end: 10px;
+border-radius: 50%;
+background-color: var(--accent-color);
+filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
 .decorated-zone {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .decorated-zone::before {
@@ -43,11 +61,15 @@
   border-block-end: 1px solid var(--nav-color);
 }
 
-/* .header__theme-menu-list {
-  align-self: center;
+/* Кнопки, меню */
+.header__theme-menu {
   display: flex;
-  gap: 10px;
-} */
+  justify-content: center;
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+}
 
 .header__theme-menu-button {
   appearance: none;
@@ -59,7 +81,7 @@
   text-align: center;
   font-weight: 400;
   line-height: 18px;
-  padding: 0px 25px;
+  padding: 4px 13px;
   background-color: transparent;
   cursor: pointer;
 }
@@ -77,26 +99,27 @@
 
 
 .title1 {
-  align-self: baseline;
+
+
   margin-top: auto;
   margin-bottom: auto;
-  color: var(--accent-color);
-  font-size: 116px;
+  color: var(--extra-color);
+  font-size: 157px;
   line-height: 82.5%; /* 95.7px */
   text-shadow: 4px 4px 0 var(--accent-color);
 }
-.titlemin {
+.subtitle {
   display: flex;
-  width: 100%;
-  align-self: flex-end ;
   width: 50%;
+  height:fit-content;
+  margin-left: auto;
 }
 .title2 {
   color: var(--accent-color);
 }
 
 .title3 {
-  align-self: stretch;
+
   background-color: var(--accent-color);
 }
 
@@ -114,10 +137,60 @@
 
 .galery {
   display: grid;
-  max-width: 10vw;
   gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+} 
+
+
+@media (width > 767px) {
+  .galery {
+  display: grid;
+  gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+  "sunset sunset ice-cream"
+  "tape books ice-cream"
+  "tape street street"
+  "tape street street";
+  }
+
+  .image:nth-child(1) {
+    grid-area: sunset;
+  }
+  .image:nth-child(2) {
+    grid-area: ice-cream;
+  }
+}
+
+@media (width > 375px) {
+  .galery {
+    display: grid;
+    gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "sunset sunset sunset"
+    
+    "
+    "tape books ice-cream"
+    "tape street street"
+    "tape street street";
+    }
+  
+    .image:nth-child(1) {
+      grid-area: sunset;
+    }
+    .image:nth-child(2) {
+      grid-area: ice-cream;
+    }
+
 }
