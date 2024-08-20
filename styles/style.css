@@ -125,27 +125,37 @@
 .title2 {
   font-size: inherit;
   color: var(--accent-color);
+ 
 }
-.section-subtitle {
-  grid-column-start: 2;  grid-column-end: 1;
-}
+
 .section {
   display: grid;
   grid-template-rows: repeat(2,auto);
   grid-template-columns:repeat(3, 1fr);
-  height: 100%;
   gap: 20px 20px;
 }
-.ty {
-  grid-column-start: 2;
-  grid-column-end: 4;
+.section3 {
+  display: grid;
+  grid-template-rows: repeat(6,auto);
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 20px 20px;
 }
 
+.section-subtitle2{
+  width: 33%;
+}
+.section-subtitle3 {
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column-start: 0;
+  grid-column-end: 2;
+}
 .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 
 .card-big {
   grid-column-start: 2;  grid-column-end: 4;
@@ -161,10 +171,8 @@ gap: 20px;
 .section2-1 {
   display: grid;
   grid-template-columns:repeat(3, 1fr);
-  height: 100%;
   gap: 20px;
 }
-
 
 .title3 {
   font-size: inherit;
@@ -177,6 +185,7 @@ gap: 20px;
   background-color: var(--accent-color);
   color: var(--font-color);
   font-weight: 400;
+  font-size: inherit;
 }
 
 .card_text {
