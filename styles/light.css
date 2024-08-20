@@ -15,8 +15,8 @@
   --bg-color: #FFF1F7;
   --font-color: #000028;
   --font-color-paragraph:#F1B2CE;
+  --bg-image: url(../images/cover-image-light.png);
   
-  background: url(../images/cover-image-light.png) center no-repeat;
   background-size: cover;
   position: relative;
   background-attachment: fixed;
