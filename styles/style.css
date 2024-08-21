@@ -332,6 +332,9 @@
   .footer {
     min-height: 1024px;
   }
+  .title-footer {
+    font-size: 120px;
+  }
 }
 
 @media (375px <= width < 767px) {
