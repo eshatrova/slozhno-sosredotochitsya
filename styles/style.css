@@ -86,7 +86,7 @@
 }
 
 .header__theme-menu-button:focus {
-  border:none;
+  border: none;
   outline: none;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .header__rec {
-  color: var(--accent-color);
+  color: var(--decor-element);
   position: absolute;
   font-weight: 400;
   line-height: 25px;
@@ -111,13 +111,11 @@
   height: 9px;
   margin-inline-end: 10px;
   border-radius: 50%;
-  background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  background-color: var(--decor-element);
+  filter: drop-shadow(0px 0px 4px var(--decor-element));
 }
 
 .title1 {
-  margin-top: auto;
-  margin-bottom: auto;
   color: var(--extra-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
@@ -132,8 +130,8 @@
   height: fit-content;
 }
 
-/* BODY */
-.body {
+/* main */
+.main {
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -149,7 +147,7 @@
 
 .h2 {
   font-size: inherit;
-  color: var(--accent-color);
+  color: var(--title-decor);
 }
 
 .card {
@@ -171,6 +169,23 @@
 .card_text {
   color: var(--font-color-paragraph);
   font-weight: 400;
+  font-style: normal;
+  
+}
+
+.link {
+  color: var(--font-color-paragraph);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  /* text-decoration: underline; */
+  border-bottom: 1px solid var(--title-decor);
+}
+
+.link:focus {
+  border: 1px solid var(--title-decor);
 }
 
 /* разделение на section2 и 2-1 требуется для того чтоб карточки
@@ -273,6 +288,15 @@
   align-items: center;
   justify-content: center;
 }
+.title-footer {
+  text-shadow: 2px 2px 0px var(--accent-color);
+  color: var(--extra-color);
+  font-size: 157px;
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-left: -20px;
+  align-self: center;
+}
 @media (768px <= width < 1024px) {
   .header {
     min-height: 1024px;
@@ -304,6 +328,9 @@
 
   .section4 {
     gap: 20px;
+  }
+  .footer {
+    min-height: 1024px;
   }
 }
 
@@ -338,7 +365,7 @@
     width: 100%;
   }
 
-  .body {
+  .main {
     gap: 50px;
   }
 

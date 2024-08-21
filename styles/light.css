@@ -1,29 +1,33 @@
-
-/* .page.theme_light {
+.page.theme_light {
   --accent-color: #ff8dcb;
   --title-decor: #353430;
   --extra-color: #ff0070;
   --bg-color: #fff1f7;
+  --decor-element:#fff1f7;
   --font-color: #353430;
   --font-color-paragraph: #353430;
   --bg-image: url(../images/cover-image-light.png);
-} */
-
-.page.theme_light .header__rec {
-  display: none;
 }
+
+/* .title1{
+  color:rgb(22, 248, 60);
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #ff8dcb;
     --title-decor: #353430;
     --extra-color: #ff0070;
+    --decor-element:#fff1f7;
     --bg-color: #fff1f7;
     --font-color: #353430;
     --font-color-paragraph: #353430;
     --bg-image: url(../images/cover-image-light.png);
-    /* Дублируем переменные светлой темы */
-  }}
+    
+  }
+}
+
+
   /* .header__theme-menu-button {
     color: var(--title-decor);
    
