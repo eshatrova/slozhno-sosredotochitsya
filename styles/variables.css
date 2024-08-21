@@ -1,11 +1,10 @@
 :root {
- --accent-color: #FF0070;
-  --title-decor: #FF0070;
-  --decor-element:#FF0070;
-  --extra-color: #DB00FF;
+  --accent-color: #ff0070;
+  --title-decor: #ff0070;
+  --decor-element: #ff0070;
+  --extra-color: #db00ff;
   --bg-color: #000028;
   --font-color: #000028;
-  --font-color-paragraph:#F1B2CE;
+  --font-color-paragraph: #f1b2ce;
   --bg-image: url(../images/cover-image-dark.png);
 }
-

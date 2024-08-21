@@ -116,7 +116,7 @@
 }
 
 .title1 {
-  color: var(--extra-color);
+  color: var(--title-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -170,7 +170,6 @@
   color: var(--font-color-paragraph);
   font-weight: 400;
   font-style: normal;
-  
 }
 
 .link {
@@ -290,12 +289,11 @@
 }
 .title-footer {
   text-shadow: 2px 2px 0px var(--accent-color);
-  color: var(--extra-color);
+  color: var(--title-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
-  text-shadow: 4px 4px 0 var(--accent-color);
   margin-left: -20px;
-  align-self: center;
+
 }
 @media (768px <= width < 1024px) {
   .header {
