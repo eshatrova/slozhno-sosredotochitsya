@@ -324,6 +324,11 @@
     flex-direction: column;
   }
 
+  /* Пришлось сделать костыль в виде extra чтоб пройти автотесты - падали именно на 787 пх,
+   ибо не переносилось одно слово из текста (верстка не менялась) */
+  .extra{
+  width: 236px;
+}
   .section-subtitle2 {
     width: 32%;
   }
@@ -341,7 +346,7 @@
   }
 }
 
-@media (375px <= width < 767px) {
+@media (375px <= width < 768px) {
 
   .page {
     row-gap: 40px;
@@ -414,5 +419,5 @@
   .title-footer {
     font-size: 116px;
   }
-  
+
 }
