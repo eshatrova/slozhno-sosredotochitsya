@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* в файле style.css прописать ТОЛЬКО те стили которые НЕ ОТНОСЯТСЯ к темам, а универсальны для всех тем */
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   color: var(--font-color);
   font-family: "IBM Plex Mono";
   font-size: 18px;
@@ -18,12 +15,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-  /* align-content: center;
-  justify-content: center;
-  position: relative; */
 }
-
-/* HEADER */
 
 .header {
   padding: 20px;
@@ -31,25 +23,6 @@
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
   height: 100vh;
-}
-.header__rec {
-  color: var(--accent-color);
-  position: absolute;
-  font-weight: 400;
-  line-height: 25px;
-  top: clamp(10px, 5vw, 20px);;
-  right: clamp(10px, 5vw, 20px);;
-}
-
-.header__rec::after {
-  content: "";
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-inline-end: 10px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
 }
 
 .decorated-zone {
@@ -62,24 +35,24 @@
   display: block;
   height: 25px;
   width: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--title-decor);
+  border-right: 1px solid var(--title-decor);
   right: clamp(10px, 5vw, 20px);
   top: clamp(10px, 5vw, 20px);
 }
+
 .decorated-zone::after {
   content: "";
   position: absolute;
   display: block;
   height: 25px;
   width: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--title-decor);
+  border-left: 1px solid var(--title-decor);
   left: clamp(10px, 5vw, 20px);
   bottom: clamp(10px, 5vw, 20px);
 }
 
-/* Кнопки в  меню */
 .header__theme-menu {
   justify-self: center;
 }
@@ -90,29 +63,56 @@
 }
 
 .header__theme-menu-button {
+  background-color: transparent;
   appearance: none;
   border: none;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--accent-color);
   text-align: center;
+  text-transform: lowercase;
+  color: var(--title-decor);
   font-weight: 400;
   line-height: 18px;
   padding: 4px 13px;
-  background-color: transparent;
   cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--title-decor);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--title-decor);
+  outline: none;
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--accent-color);
+  border:none;
+  outline: none;
 }
-.header__theme-menu-button_active:focus {
+
+.header__theme-menu-button_active {
   pointer-events: none;
+  border: 1px solid var(--title-decor);
+}
+
+.header__rec {
+  color: var(--accent-color);
+  position: absolute;
+  font-weight: 400;
+  line-height: 25px;
+  top: clamp(10px, 5vw, 20px);
+  right: clamp(10px, 5vw, 20px);
+}
+
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-inline-end: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
 }
 
 .title1 {
@@ -146,15 +146,18 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 20px;
 }
+
 .h2 {
   font-size: inherit;
   color: var(--accent-color);
 }
+
 .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .card-big {
   grid-column-start: 2;
   grid-column-end: 4;
@@ -271,92 +274,95 @@
   justify-content: center;
 }
 @media (768px <= width < 1024px) {
-  .page {
-  
-  }
   .header {
-    min-block-size: 375px;
-    height: 100vh;
     min-height: 1024px;
     padding: 20px;
-    
   }
+
   .header__theme-menu {
     align-self: center;
     justify-self: end;
   }
+
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
   }
+
   .title1 {
     font-size: 120px;
-   
   }
+
   .section2-1 {
     display: flex;
     flex-direction: column;
   }
+
   .section-subtitle2 {
     width: 32%;
   }
-  
+
   .section4 {
-   
     gap: 20px;
   }
 }
-
 
 @media (375px <= width < 767px) {
   .page {
     row-gap: 40px;
   }
+
   .header {
     min-block-size: 375px;
     height: 100vh;
     min-height: 668px;
     padding: 10px;
-    
   }
 
-.header__theme-menu {
-  align-self: center;
-  justify-self: end;
-}
-.header__theme-menu-list {
-  display: flex;
-  flex-direction: column;
-}
-.title1 {
-  font-size: 116px;
-  margin-left: 0px;
-}
+  .header__theme-menu {
+    align-self: center;
+    justify-self: end;
+  }
 
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+  }
 
-.subtitle-header {
-  width: 100%;
-}
-.body{
-  gap:50px;
-}
-.section {
-  display: flex;
-  flex-direction: column;
-}
-.section3 {
-  display: flex;
-  flex-direction: column;
-}
-.section4{
-  gap:10px;
-}
-.galery {
-  display: flex;
-  flex-direction: column;
-  gap:10px
-}
-.footer {
-  height: 667px;
-}
+  .title1 {
+    font-size: 116px;
+    margin-left: 0px;
+  }
+
+  .subtitle-header {
+    width: 100%;
+  }
+
+  .body {
+    gap: 50px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section4 {
+    gap: 10px;
+  }
+
+  .galery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer {
+    height: 667px;
+  }
 }

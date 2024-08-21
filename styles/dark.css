@@ -1,23 +1,10 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-/* в dark дублируешь все переменные из первого пункта, но уже не для :root, а для .page.theme_dark */
 
 .page.theme_dark {
-  --main-font: IBM Plex mono;
-  --accent-font: "Raleway";
   --accent-color: #FF0070;
-  --title-decor: "";
+  --title-decor: #FF0070;
   --extra-color: #DB00FF;
   --bg-color: #000028;
   --font-color: #000028;
   --font-color-paragraph:#F1B2CE;
-  
-  background: url(../images/cover-image-dark.png) center no-repeat;
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
- 
+  --bg-image: url(../images/cover-image-dark.png);
 }
