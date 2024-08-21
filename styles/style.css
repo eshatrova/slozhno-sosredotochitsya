@@ -13,33 +13,32 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-
   max-width: 1024px;
+  min-width: 375px;
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-  align-content: center;
+  /* align-content: center;
   justify-content: center;
-  position: relative;
+  position: relative; */
 }
 
 /* HEADER */
 
 .header {
-  padding:20px;
+  padding: 20px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
   height: 100vh;
 }
-
 .header__rec {
   color: var(--accent-color);
   position: absolute;
   font-weight: 400;
   line-height: 25px;
-  top: 20px;
-  right: 20px;
+  top: clamp(10px, 5vw, 20px);;
+  right: clamp(10px, 5vw, 20px);;
 }
 
 .header__rec::after {
@@ -53,28 +52,32 @@
   filter: drop-shadow(0px 0px 4px var(--accent-color));
 }
 
-.header::after {
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+.decorated-zone {
+  position: relative;
 }
 
-/* .decor_up::before {
+.decorated-zone::before {
   content: "";
-  display: inline-block;
-  width: 25px;
+  position: absolute;
+  display: block;
   height: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  width: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  right: clamp(10px, 5vw, 20px);
+  top: clamp(10px, 5vw, 20px);
 }
-
-.decor_down::before {
+.decorated-zone::after {
   content: "";
-  display: inline-block;
-  width: 25px;
+  position: absolute;
+  display: block;
   height: 25px;
-  border-left: 1px solid var(--accent-color);
+  width: 25px;
   border-bottom: 1px solid var(--accent-color);
-} */
+  border-left: 1px solid var(--accent-color);
+  left: clamp(10px, 5vw, 20px);
+  bottom: clamp(10px, 5vw, 20px);
+}
 
 /* Кнопки в  меню */
 .header__theme-menu {
@@ -83,7 +86,7 @@
 
 .header__theme-menu-list {
   display: flex;
-  gap:10px;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
@@ -108,6 +111,9 @@
 .header__theme-menu-button:focus {
   border-bottom: 1px solid var(--accent-color);
 }
+.header__theme-menu-button_active:focus {
+  pointer-events: none;
+}
 
 .title1 {
   margin-top: auto;
@@ -121,11 +127,10 @@
 }
 .subtitle-header {
   justify-self: end;
-  align-self:center;
- width: 50%;
- height: fit-content; 
+  align-self: center;
+  width: 50%;
+  height: fit-content;
 }
-
 
 /* BODY */
 .body {
@@ -255,7 +260,6 @@
 }
 
 .street {
- 
   grid-column-start: 2;
   grid-column-end: 4;
 }
@@ -266,19 +270,9 @@
   align-items: center;
   justify-content: center;
 }
-/* @media (max-width: 768px) {
-  .section-subtitle2 {
-    width: 100%;
-  }
-  .section2-1 {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 668px) {
+@media (668px <= width < 1024px) {
   .page {
-    padding: 10px;
+   
 
     max-width: 668px;
     min-width: 375px;
@@ -296,80 +290,69 @@
     flex-direction: column;
     gap: 10px;
   }
-  .galery {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-  } */
-/* .sunset {
-    height: 142px;
-  } */
-/* .ice-cream {
-    height: 355px;
-  } */
-/* .tape {
-    height: 237px;
-  } */
-/* .books {
-    height: 355px;
-  } */
-/* .street {
-    height: 237px;
-  } */
-
-/* .section-subtitle2 {
+}
+.section-subtitle2 {
   width: 100%;
 }
 .section2-1 {
   display: flex;
   flex-direction: column;
-} */
-
-/* @media (width =< 768px) {
-  .header {
-    min-width: 768px;
-  }
-  .galery {
-    display: grid;
-    gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      "sunset sunset ice-cream"
-      "tape books ice-cream"
-      "tape street street"
-      "tape street street";
-  }
-
-  .image:nth-child(1) {
-    grid-area: sunset;
-  }
-  .image:nth-child(2) {
-    grid-area: ice-cream;
-  }
 }
 
-@media (width > 375px) {
+/* @media (max-width: 768px) {
+  .section-subtitle2 {
+    width: 100%;
+  }
+  .section2-1 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+*/
+
+@media (375px <= width < 667px) {
   .header {
     min-block-size: 375px;
+    height: 100vh;
+    min-height: 668px;
+    padding: 10px;
+    
   }
 
-  .galery {
-    display: grid;
-    gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      "sunset sunset sunset"
-      "tape books ice-cream"
-      "tape street street"
-      "tape street street";
-  }
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
 
-  .image:nth-child(1) {
-    grid-area: sunset;
-  }
-  .image:nth-child(2) {
-    grid-area: ice-cream;
-  }
-} */
+.title1 {
+  font-size: 116px;
+  margin-left: 0px;
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle-header {
+  width: 100%;
+}
+.body{
+  gap:50px;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section3 {
+  display: flex;
+  flex-direction: column;
+}
+.section4{
+  gap:10px;
+}
+.galery {
+  display: flex;
+  flex-direction: column;
+  gap:10px
+}
+}
