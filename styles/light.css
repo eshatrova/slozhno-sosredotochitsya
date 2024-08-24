@@ -11,6 +11,14 @@
 .page.theme_light .header__theme-menu-button:hover {
   outline: 1px solid rgba(50, 49, 45, 0.40);;
 }
+.page.theme_light .h1 {
+  color: #FFC2E6;
+  text-shadow: 4px 4px 0 var(--extra-color);
+}
+.page.theme_light .title-footer {
+  text-shadow: 2px 2px 0px var(--extra-color);
+  color: #FFC2E6;
+}
 /* .title1{
   color:rgb(22, 248, 60);
 } */
@@ -27,14 +35,14 @@
     --font-color-paragraph: #353430;
     --bg-image: url(../images/cover-image-light.png);
   }
-  .page.theme_light .header__theme-menu-button:hover {
+  .header__theme-menu-button:hover {
     outline: 1px solid rgba(50, 49, 45, 0.40);;
   }
-  .page.theme_light .h1 {
+  .h1 {
     color: #FFC2E6;
     text-shadow: 4px 4px 0 var(--extra-color);
   }
-  .page.theme_light .title-footer {
+  .title-footer {
     text-shadow: 2px 2px 0px var(--extra-color);
     color: #FFC2E6;
 }
