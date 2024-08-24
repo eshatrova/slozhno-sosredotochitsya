@@ -9,3 +9,7 @@
   --font-color-paragraph: #f1b2ce;
   --bg-image: url(../images/cover-image-dark.png);
 }
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--title-decor);
+}
