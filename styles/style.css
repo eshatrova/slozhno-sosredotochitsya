@@ -1,6 +1,6 @@
 .page {
   color: var(--font-color);
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", "monospace", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -14,7 +14,7 @@
   min-width: 375px;
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  row-gap: 40px;
 }
 
 .header {
@@ -23,6 +23,15 @@
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
   height: 100vh;
+  margin-bottom: 20px;
+}
+
+.title1 {
+  color: var(--title-color);
+  font-size: 157px;
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
 }
 
 .decorated-zone {
@@ -37,8 +46,8 @@
   width: 25px;
   border-top: 1px solid var(--title-decor);
   border-right: 1px solid var(--title-decor);
-  right: clamp(10px, 5vw, 20px);
-  top: clamp(10px, 5vw, 20px);
+  right: clamp(10px, 5cqw, 20px);
+  top: clamp(10px, 5cqh, 20px);
 }
 
 .decorated-zone::after {
@@ -49,8 +58,8 @@
   width: 25px;
   border-bottom: 1px solid var(--title-decor);
   border-left: 1px solid var(--title-decor);
-  left: clamp(10px, 5vw, 20px);
-  bottom: clamp(10px, 5vw, 20px);
+  left: clamp(10px, 5cqw, 20px);
+  bottom: clamp(10px, 5cqh, 20px);
 }
 
 .header__theme-menu {
@@ -81,7 +90,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--title-decor);
+  border-bottom: 1px solid currentColor;
   outline: none;
 }
 
@@ -91,8 +100,7 @@
 }
 
 .header__theme-menu-button_active {
-  pointer-events: none;
-  border: 1px solid var(--title-decor);
+  border: 1px solid currentColor;
 }
 
 .header__rec {
@@ -112,7 +120,7 @@
   margin-inline-end: 10px;
   border-radius: 50%;
   background-color: var(--decor-element);
-  filter: drop-shadow(0px 0px 4px var(--decor-element));
+  box-shadow: 0 0 4px 2px var(--decor-element);
 }
 
 .title1 {
@@ -181,23 +189,23 @@
 
 .link:hover {
   /* text-decoration: underline; */
-  border-bottom: 1px solid var(--title-decor);
+  border-bottom: 1px solid currentColor;
 }
 
 .link:focus {
-  border: 1px solid var(--title-decor);
+  border: 1px solid currentColor;
 }
 
-/* разделение на section2 и 2-1 требуется для того чтоб карточки
+/* разделение на reasons и 2-1 требуется для того чтоб карточки
 при добавлении переносились на новую строку */
 
-.section2 {
+.reasons {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.section2-1 {
+.reasons-addcard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -207,7 +215,7 @@
   width: 33%;
 }
 
-.section3 {
+.adviсes {
   display: grid;
   grid-template-rows: repeat(6, auto);
   grid-template-columns: 1fr 1fr 1fr;
@@ -257,15 +265,12 @@
 .sunset {
   grid-column-start: 1;
   grid-column-end: 3;
-
-  /* height: 260px; */
 }
 
 .ice-cream {
   grid-column-start: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  /* width: 315px; */
 }
 
 .books {
@@ -286,7 +291,8 @@
 
 .footer {
   display: flex;
-  height: 768px;
+  height: 100vh;
+  min-height: 768px;
   align-items: center;
   justify-content: center;
 }
@@ -296,10 +302,13 @@
   color: var(--title-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
-  margin-left: -20px;
 }
 
-@media (768px <= width < 1024px) {
+.footer:last-child {
+  row-gap: 0px;
+}
+
+@media (width <= 1023px) {
   .header {
     min-height: 1024px;
     padding: 20px;
@@ -315,11 +324,15 @@
     flex-direction: column;
   }
 
+  .introduction {
+    grid-template-columns: 236px 1fr 1fr;
+  }
+
   .title1 {
     font-size: 120px;
   }
 
-  .section2-1 {
+  .reasons-addcard {
     display: flex;
     flex-direction: column;
   }
@@ -327,15 +340,15 @@
   /* Пришлось сделать костыль в виде extra чтоб пройти автотесты - падали именно на 787 пх,
    ибо не переносилось одно слово из текста (верстка не менялась) */
 
-  .extra {
+  /* .extra {
     width: 236px;
-  }
+  } */
 
   .section-subtitle2 {
     width: 32%;
   }
 
-  .section4 {
+  .galery-section {
     gap: 20px;
   }
 
@@ -348,7 +361,7 @@
   }
 }
 
-@media (375px <= width < 768px) {
+@media (width <= 767px) {
   .page {
     row-gap: 40px;
   }
@@ -358,6 +371,16 @@
     height: 100vh;
     min-height: 668px;
     padding: 10px;
+  }
+
+  .decorated-zone::before {
+    right: 10px;
+    top: 10px;
+  }
+
+  .decorated-zone::after {
+    left: 10px;
+    bottom: 10px;
   }
 
   .header__theme-menu {
@@ -393,17 +416,17 @@
     width: 100%;
   }
 
-  .section2-1 {
+  .reasons-addcard {
     display: flex;
     flex-direction: column;
   }
 
-  .section3 {
+  .adviсes {
     display: flex;
     flex-direction: column;
   }
 
-  .section4 {
+  .galery-section {
     gap: 10px;
   }
 
@@ -414,7 +437,7 @@
   }
 
   .footer {
-    height: 667px;
+    min-height: 667px;
   }
 
   .title-footer {
