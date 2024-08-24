@@ -207,7 +207,7 @@
   width: 33%;
 }
 
-.adviсes {
+.advices {
   display: grid;
   grid-template-rows: repeat(6, auto);
   grid-template-columns: 1fr 1fr 1fr;
@@ -324,7 +324,7 @@
     font-size: 120px;
   }
 
-  .adviсes {
+  .advices {
     grid-template-columns: 236px 1fr 1fr;
   }
   .reasons-addcard {
@@ -359,6 +359,7 @@
     height: 100vh;
     min-height: 668px;
     padding: 10px;
+    margin-bottom: 0px;;
   }
 
   .decorated-zone::before {
@@ -395,7 +396,7 @@
     gap: 50px;
   }
 
-  .section {
+  .introduction{
     display: flex;
     flex-direction: column;
   }
