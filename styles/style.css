@@ -88,6 +88,7 @@
 
 .header__theme-menu-button:focus {
   border: none;
+  border-bottom: 1px solid var(--title-decor);
   outline: none;
 }
 
@@ -116,7 +117,8 @@
 }
 
 .h1 {
-  color: var(--extra-color);
+  
+  color: var(--h1-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -185,7 +187,9 @@
 }
 
 .link:focus {
-  border: 1px solid currentColor;
+  outline-offset:-2px  ;
+  outline: 1.5px solid currentColor;
+  height: 20px;
 }
 
 /* разделение на reasons и 2-1 требуется для того чтоб карточки
@@ -291,7 +295,7 @@
 
 .title-footer {
   text-shadow: 2px 2px 0px var(--accent-color);
-  color: var(--extra-color);
+  color:  var(--h1-color);
   font-size: 157px;
   line-height: 82.5%; /* 95.7px */
 }
@@ -337,10 +341,11 @@
   }
 
   .galery-section {
-    margin: 20px;
+    margin-bottom: -14px;
   }
 
   .footer {
+    margin-top:20px;
     min-height: 1024px;
   }
 
@@ -416,6 +421,7 @@
   }
 
   .galery-section {
+
     margin: 0px;
     column-gap: 0px;
     gap: 10px;
@@ -429,6 +435,7 @@
 
   .footer {
     min-height: 667px;
+    margin-top:0px;
   }
 
   .title-footer {
