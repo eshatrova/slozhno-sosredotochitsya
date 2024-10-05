@@ -73,7 +73,7 @@
   color: var(--title-decor);
   font-weight: 400;
   line-height: 18px;
-  padding: 4px 13px;
+  padding: 3px 13px;
   cursor: pointer;
 }
 .header__theme-menu-button:hover {
@@ -134,6 +134,7 @@
 }
 
 /* main */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -143,9 +144,14 @@
 
 .content-section {
   display: grid;
-  grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 20px;
+}
+.grid-repeat-2 {
+  grid-template-rows: repeat(2, auto);
+}
+.grid-repeat-6 {
+  grid-template-rows: repeat(2, auto);
 }
 
 .section-subtitle {
@@ -207,15 +213,8 @@
   gap: 20px;
 }
 
-.section-subtitle2 {
-  width: 33%;
-}
-
-.advices {
-  display: grid;
-  grid-template-rows: repeat(6, auto);
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px 20px;
+.section-subtitle-width {
+  width: 32%;
 }
 
 .section-subtitle-grid {
@@ -305,7 +304,6 @@
 }
 
 @media (width <= 1023px) {
-  
   .header {
     min-height: 1024px;
     padding: 20px;
@@ -324,19 +322,12 @@
     grid-template-columns: 236px 1fr 1fr;
   }
 
-  .advices {
-    grid-template-columns: 236px 1fr 1fr;
-  }
-
   .reasons-addcard {
     display: flex;
     flex-direction: column;
   }
 
-  .section-subtitle-width {
-    width: 32%;
-  }
-
+ 
   .galery-section {
     margin-bottom: -14px;
   }
@@ -403,15 +394,13 @@
     display: flex;
     flex-direction: column;
   }
+  
 
   .section-subtitle-width {
     width: 100%;
   }
 
-  .advices {
-    display: flex;
-    flex-direction: column;
-  }
+  
 
   .galery-section {
     margin: 0px;
