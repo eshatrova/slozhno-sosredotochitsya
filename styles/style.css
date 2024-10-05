@@ -307,6 +307,7 @@
 }
 
 @media (width <= 1023px) {
+  
   .header {
     min-height: 1024px;
     padding: 20px;
@@ -341,14 +342,9 @@
 }
 
 @media (width <= 767px) {
-  
-  .page {
-    row-gap: 40px;
-  }
 
   .header {
     min-block-size: 375px;
-    height: 100vh;
     min-height: 668px;
     padding: 10px;
     margin-bottom: 0px;
