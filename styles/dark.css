@@ -1,7 +1,8 @@
 .page.theme_dark {
   --accent-color: #ff0070;
-  --h1-color:#db00ff;
+  --h1-color: #db00ff;
   --title-decor: #ff0070;
+  --hovereffect: rgba(255, 0, 112, 0.4);
   --decor-element: #ff0070;
   --extra-color: #db00ff;
   --bg-color: #000028;
@@ -10,6 +11,17 @@
   --bg-image: url(../images/cover-image-dark.png);
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--title-decor);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #ff0070;
+    --h1-color: #db00ff;
+    --title-decor: #ff0070;
+    --decor-element: #ff0070;
+    --extra-color: #db00ff;
+    --hovereffect: rgba(255, 0, 112, 0.4);
+    --bg-color: #000028;
+    --font-color: #000028;
+    --font-color-paragraph: #f1b2ce;
+    --bg-image: url(../images/cover-image-dark.png);
+  }
 }

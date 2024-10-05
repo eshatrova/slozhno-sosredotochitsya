@@ -1,6 +1,6 @@
 .page {
   color: var(--font-color);
-  font-family: "IBM Plex Mono", "monospace", sans-serif;
+  font-family: "IBM Plex Mono", monospace, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -50,8 +50,8 @@
   width: 25px;
   border-bottom: 1px solid var(--title-decor);
   border-left: 1px solid var(--title-decor);
-  left: clamp(10px, 5cqw, 20px);
-  bottom: clamp(10px, 5cqh, 20px);
+  left: 20px;
+  bottom: 20px;
 }
 
 .header__theme-menu {
@@ -76,9 +76,8 @@
   padding: 4px 13px;
   cursor: pointer;
 }
-
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--title-decor);
+  outline: 1px solid var(--hovereffect);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -94,10 +93,12 @@
 
 .header__theme-menu-button_active {
   border: 1px solid currentColor;
+  pointer-events: "none";
 }
 
 .header__rec {
   color: var(--decor-element);
+  text-transform: uppercase;
   position: absolute;
   font-weight: 400;
   line-height: 25px;
@@ -116,10 +117,9 @@
   box-shadow: 0 0 4px 2px var(--decor-element);
 }
 
-.h1 {
-  
+.title {
   color: var(--h1-color);
-  font-size: 157px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%; /* 95.7px */
   text-shadow: 4px 4px 0 var(--accent-color);
   margin-left: -20px;
@@ -141,14 +141,14 @@
   padding: 0px 20px;
 }
 
-.introduction {
+.content-section {
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 20px;
 }
 
-.h2 {
+.section-subtitle {
   font-size: inherit;
   color: var(--title-decor);
 }
@@ -159,12 +159,12 @@
   gap: 10px;
 }
 
-.card-big {
+.cards-template {
   grid-column-start: 2;
   grid-column-end: 4;
 }
 
-.h3 {
+.subtitle {
   font-size: inherit;
   background-color: var(--accent-color);
 }
@@ -187,7 +187,7 @@
 }
 
 .link:focus {
-  outline-offset:-2px  ;
+  outline-offset: -2px;
   outline: 1.5px solid currentColor;
   height: 20px;
 }
@@ -218,14 +218,14 @@
   gap: 20px 20px;
 }
 
-.section-subtitle3 {
+.section-subtitle-grid {
   grid-row-start: 1;
   grid-row-end: 6;
   grid-column-start: 0;
   grid-column-end: 2;
 }
 
-.h4 {
+.tips-subtitle {
   align-self: stretch;
   background-color: var(--accent-color);
   color: var(--font-color);
@@ -295,8 +295,8 @@
 
 .title-footer {
   text-shadow: 2px 2px 0px var(--accent-color);
-  color:  var(--h1-color);
-  font-size: 157px;
+  color: var(--h1-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%; /* 95.7px */
 }
 
@@ -305,6 +305,7 @@
 }
 
 @media (width <= 1023px) {
+  
   .header {
     min-height: 1024px;
     padding: 20px;
@@ -316,27 +317,23 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: column;
   }
 
-  .introduction {
+  .content-section {
     grid-template-columns: 236px 1fr 1fr;
-  }
-
-  .h1 {
-    font-size: 120px;
   }
 
   .advices {
     grid-template-columns: 236px 1fr 1fr;
   }
+
   .reasons-addcard {
     display: flex;
     flex-direction: column;
   }
 
-  .section-subtitle2 {
+  .section-subtitle-width {
     width: 32%;
   }
 
@@ -345,12 +342,8 @@
   }
 
   .footer {
-    margin-top:20px;
+    margin-top: 20px;
     min-height: 1024px;
-  }
-
-  .title-footer {
-    font-size: 120px;
   }
 }
 
@@ -377,6 +370,11 @@
     bottom: 10px;
   }
 
+  .header__rec {
+    top: 10px;
+    right: 10px;
+  }
+
   .header__theme-menu {
     align-self: center;
     justify-self: end;
@@ -387,8 +385,8 @@
     flex-direction: column;
   }
 
-  .h1 {
-    font-size: 116px;
+  .title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-left: 0px;
   }
 
@@ -401,18 +399,13 @@
     gap: 50px;
   }
 
-  .introduction {
+  .content-section {
     display: flex;
     flex-direction: column;
   }
 
-  .section-subtitle2 {
+  .section-subtitle-width {
     width: 100%;
-  }
-
-  .reasons-addcard {
-    display: flex;
-    flex-direction: column;
   }
 
   .advices {
@@ -421,7 +414,6 @@
   }
 
   .galery-section {
-
     margin: 0px;
     column-gap: 0px;
     gap: 10px;
@@ -435,10 +427,10 @@
 
   .footer {
     min-height: 667px;
-    margin-top:0px;
+    margin-top: 0px;
   }
 
   .title-footer {
-    font-size: 116px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }

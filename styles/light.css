@@ -2,38 +2,28 @@
   --accent-color: #ff8dcb;
   --title-decor: #353430;
   --extra-color: #ff0070;
-  --h1-color:#FFC2E6;
+  --hovereffect: rgba(50, 49, 45, 0.4);
+  --h1-color: #ffc2e6;
   --bg-color: #fff1f7;
   --decor-element: #fff1f7;
   --font-color: #353430;
   --font-color-paragraph: #353430;
   --bg-image: url(../images/cover-image-light.png);
 }
-.page.theme_light .header__theme-menu-button:hover {
-  outline: 1px solid rgba(50, 49, 45, 0.40);;
-}
 
-
-/* .title1{
-  color:rgb(22, 248, 60);
-} */
 
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #ff8dcb;
     --title-decor: #353430;
     --extra-color: #ff0070;
-    --h1-color:#FFC2E6;
+    --hovereffect: rgba(50, 49, 45, 0.4);
+    --h1-color: #ffc2e6;
     --decor-element: #fff1f7;
-    --title-color:#FFC2E6;
+    --title-color: #ffc2e6;
     --bg-color: #fff1f7;
     --font-color: #353430;
     --font-color-paragraph: #353430;
     --bg-image: url(../images/cover-image-light.png);
   }
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(50, 49, 45, 0.40);;
-  }
- 
 }
-
