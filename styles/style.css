@@ -145,17 +145,12 @@
 
 .content-section {
   display: grid;
+  grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 20px;
 }
 
-.grid-repeat-2 {
-  grid-template-rows: repeat(2, auto);
-}
 
-.grid-repeat-6 {
-  grid-template-rows: repeat(2, auto);
-}
 
 .section-subtitle {
   font-size: inherit;
@@ -307,7 +302,7 @@
 }
 
 @media (width <= 1023px) {
-  
+
   .header {
     min-height: 1024px;
     padding: 20px;
